@@ -2,7 +2,7 @@
 Connect-MsolService -Credential $credential
 $customers = Get-MsolPartnerContract -All
 $TransportRuleName = "Block Auto-Forwarding"
-$rejectMessage = "To improve security, auto-forwarding rules to external email addresses have been disabled. Please contanct your helpdesk if you want to create an exception"
+$rejectMessage = "To improve security, auto-forwarding rules to external email addresses have been disabled. Please contact your helpdesk if you want to create an exception"
  
 Write-Output "Found $($customers.Count) customers for $((Get-MsolCompanyInformation).displayname)."
   
