@@ -6,7 +6,7 @@ Install-Module -Name ExchangeOnlineManagement
 Connect-ExchangeOnline
  
 $externalTransportRuleName = "Block Auto-Forwarding"
-$rejectMessageText = "To improve security, auto-forwarding rules to external email addresses have been disabled. Please contanct your helpdesk if you want to create an exception."
+$rejectMessageText = "To improve security, auto-forwarding rules to external email addresses have been disabled. Please contact your helpdesk if you want to create an exception."
  
 $externalForwardRule = Get-TransportRule | Where-Object {$_.Identity -contains $externalTransportRuleName}
  
