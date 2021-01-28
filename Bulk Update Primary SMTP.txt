@@ -1,0 +1,17 @@
+Create CSV with Headers of
+
+Users 
+
+AlaisEmailaddress
+
+Where
+
+Users=current primarty SMTP for User
+
+
+$csv = Import-Csv 'C:\Users\NickRoss\OneDrive - PAX8\Scripts'\Primarysmtpupdate.csv'
+foreach ($line in $csv)
+{
+$SMTP ="SMTP:"+$line.AliasEmailaddress
+Set-Mailbox -Identity $line.User -EmailAddresses $SMTP
+} 
