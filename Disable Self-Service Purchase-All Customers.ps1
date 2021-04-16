@@ -1,4 +1,4 @@
-﻿Write-Host "Checking for MSOnline module..."
+Write-Host "Checking for MSOnline module..."
 
 $Module = Get-Module -Name "MSOnline" -ListAvailable
 
@@ -21,7 +21,7 @@ ForEach($tenant in $tenants){
 
 Write-Host "Disabling Self-Service for $($tenant.Name)" -ForegroundColor Green
 
-Set-MsolCompanySettings -AllowAdHocSubscriptions $false
+Set-MsolCompanySettings -Tenant $tenant.tenantID -AllowAdHocSubscriptions $false
 
 
 }
